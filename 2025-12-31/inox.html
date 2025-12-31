@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Booking</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+    <script>
+        function getTicketPrice(movieName) {
+            if (movieName === "Avatar") {
+                return 250;
+            } else if (movieName === "Dhurandhar") {
+                return 180;
+            } else {
+                return 0;
+            }
+        }
+
+        function BookClick() {
+            document.getElementById("btnBooking").style.display = "none";
+            document.getElementById("BookingSummary").style.display = "block";
+
+            let movieName = document.getElementById("lstMovie").value;
+
+            document.getElementById("lblMovie").innerHTML = movieName;
+            document.getElementById("lblDate").innerHTML =
+                document.getElementById("lstDate").value;
+            document.getElementById("lblTime").innerHTML =
+                document.getElementById("lstTime").value;
+            document.getElementById("lblSeats").innerHTML =
+                document.getElementById("lstSeats").value;
+
+            let price = getTicketPrice(movieName);
+            document.getElementById("lblPrice").innerHTML = "₹ " + price;
+            let imgPoster = document.getElementById("imgPoster");
+            if (movieName === "Avatar") {
+                imgPoster.src = "../public/images/avatar.jpg";
+            } else if (movieName === "Dhurandhar") {
+                imgPoster.src = "../public/images/dhurandhar.jpg";
+            }
+        }
+
+        function EditClick() {
+            document.getElementById("BookingSummary").style.display = "none";
+            document.getElementById("btnBooking").style.display = "block";
+        }
+    </script>
+</head>
+
+<body class="container-fluid">
+
+    <button id="btnBooking"
+            class="btn btn-primary mt-3"
+            data-bs-toggle="modal"
+            data-bs-target="#booking">
+        Quick Booking
+    </button>
+
+    <div class="modal fade" id="booking">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h3>Quick Booking</h3>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="d-flex gap-2">
+
+                        <select id="lstMovie" class="form-select">
+                            <option value="-1">Select Movie</option>
+                            <option value="Avatar">Avatar</option>
+                            <option value="Dhurandhar">Dhurandhar</option>
+                        </select>
+
+                        <select id="lstDate" class="form-select">
+                            <option value="-1">Select Date</option>
+                            <option>Today 17 April</option>
+                            <option>Tomorrow 18 April</option>
+                        </select>
+
+                        <select id="lstTime" class="form-select">
+                            <option value="-1">Select Time</option>
+                            <option>10:30 A.M.</option>
+                            <option>06:30 P.M.</option>
+                        </select>
+
+                        <select id="lstSeats" class="form-select">
+                            <option value="-1">Select Seats</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+
+                        <button onclick="BookClick()"
+                                data-bs-dismiss="modal"
+                                class="btn btn-info">
+                            Book
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="BookingSummary" style="display:none;" class="mt-4 w-25">
+
+        <h3 class="bg-dark text-white p-2">Booking Summary</h3>
+
+        <img id="imgPoster" class="img-fluid mb-3" height="300">
+
+        <dl class="row">
+            <dt class="col-5">Movie</dt>
+            <dd class="col-7" id="lblMovie"></dd>
+
+            <dt class="col-5">Date</dt>
+            <dd class="col-7" id="lblDate"></dd>
+
+            <dt class="col-5">Time</dt>
+            <dd class="col-7" id="lblTime"></dd>
+
+            <dt class="col-5">Seats</dt>
+            <dd class="col-7" id="lblSeats"></dd>
+
+            <dt class="col-5">Price / Seat</dt>
+            <dd class="col-7" id="lblPrice"></dd>
+        </dl>
+
+        <button onclick="EditClick()"
+                data-bs-toggle="modal"
+                data-bs-target="#booking"
+                class="btn btn-warning w-100">
+            Edit Booking
+        </button>
+
+    </div>
+
+</body>
+</html>
