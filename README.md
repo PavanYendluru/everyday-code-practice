@@ -1,34 +1,16 @@
-\# Everyday Code Practice 🚀
-
-
+# Everyday Code Practice 🚀
 
 This repository contains my daily coding practice.
 
+### Technologies Practiced
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
+- Java
+- SQL
 
-
-Technologies:
-
-\- HTML
-
-\- CSS
-
-\- JavaScript
-
-\- Bootstrap
-
-\- React js
-
-\- Java
-
-\- SQL
-
-
-
-Goal:
-
-\- Consistent daily coding
-
-\- Strong fundamentals
-
-
-
+### Goal
+- Maintain daily coding consistency
+- Strengthen fundamentals
+- Track learning progress
