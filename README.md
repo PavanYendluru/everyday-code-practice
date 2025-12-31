@@ -7,6 +7,7 @@ This repository contains my daily coding practice.
 - CSS
 - JavaScript
 - Bootstrap
+- React
 - Java
 - SQL
 
