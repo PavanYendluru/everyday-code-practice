@@ -1,0 +1,29 @@
+[
+    {
+        "Title": "Royals",
+        "Logo": "../public/images/rr.jpg",
+        "Matches": 9,
+        "Won": 8,
+        "Lost": 1,
+        "Pts": 16,
+        "Nrr": 0.694
+    },
+    {
+        "Title": "Knight Riders",
+        "Logo": "../public/images/kkr.jpg",
+        "Matches": 9,
+        "Won": 6,
+        "Lost": 3,
+        "Pts": 12,
+        "Nrr": 0.999
+    },
+    {
+        "Title": "Super Kings",
+        "Logo": "../public/images/ch.jpg",
+        "Matches": 9,
+        "Won": 5,
+        "Lost": 4,
+        "Pts": 10,
+        "Nrr": 0.810
+    }
+]
